@@ -35,8 +35,8 @@ void AFloatingActor::Tick(float DeltaTime)
 	FRotator NewRotation = GetActorRotation();
 	float RunningTime = GetGameTimeSinceCreation();
 	float DeltaHeight = (FMath::Sin(RunningTime + DeltaTime) - FMath::Sin(RunningTime));
-	NewLocation.Z += DeltaHeight * 20.0f;
-	float DeltaRotation = DeltaTime * 20.0f;
+	NewLocation.Z += DeltaHeight * FloatSpeed;
+	float DeltaRotation = DeltaTime * RotationSpeed;
 	NewRotation.Yaw += DeltaRotation;
 	SetActorLocationAndRotation(NewLocation, NewRotation);
 }
